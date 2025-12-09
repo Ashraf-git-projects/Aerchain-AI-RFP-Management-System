@@ -22,4 +22,10 @@ app.use("/api/vendors", vendorRoutes);
 app.use("/api/rfps", rfpRoutes);
 
 const PORT = process.env.PORT || 5000;
+
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
+
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
